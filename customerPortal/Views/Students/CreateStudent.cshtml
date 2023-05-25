@@ -1,0 +1,35 @@
+﻿<div>
+    <h3>Add New Student</h3>
+</div>
+<div class="row">
+    <div class="col-md-8">
+        @{
+            if (TempData["ErrorTemp"] != null)
+            {
+                <div class="alert alert-danger">
+                    @TempData["ErrorTemp"]
+                </div>
+
+            }
+        }
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-8">
+        <form asp-controller="Students" asp-action="CreateStudentPost">
+            <div class="mb-3">
+                <label for="FirstName">FirstName</label>
+                <input type="text" class="form-control" id="FirstName" name="FirstName" placeholder="Enter FirstName" required>
+            </div>
+            <div class="mb-3">
+                <label for="LastName">Email address</label>
+                <input type="text" class="form-control" id="LastName" name="LastName" placeholder="Enter LastName" required> 
+            </div>
+            <div class="mb-3">
+                <label for="Email">Email address</label>
+                <input type="email" class="form-control" id="Email" name="Email" placeholder="Enter Email" required> 
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
